@@ -262,3 +262,13 @@ yarn-error.log*
 # misc
 .DS_Store
 *.pem
+
+# =========================================================
+# Re-include frontend source dirs that collide with the
+# Python packaging ignores above (e.g. the generic `lib/` rule).
+# These are application source, NOT build artifacts.
+# =========================================================
+!frontend/lib/
+!frontend/lib/**
+!frontend/build/
+!frontend/build/**
