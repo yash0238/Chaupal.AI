@@ -9,42 +9,63 @@
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-    --primary: 142 76% 36%;
+    --primary: 142 72% 32%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96.1%;
+    --secondary: 138 40% 96%;
+    --secondary-foreground: 150 30% 18%;
+    --muted: 140 25% 96%;
     --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 84 70% 45%;
+    --accent-foreground: 84 90% 12%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 142 76% 36%;
-    --radius: 0.5rem;
+    --border: 140 20% 90%;
+    --input: 140 20% 90%;
+    --ring: 142 72% 32%;
+    --radius: 0.75rem;
+
+    /* Brand gradients */
+    --gradient-hero: linear-gradient(
+      135deg,
+      hsl(140 60% 96%) 0%,
+      hsl(150 55% 92%) 45%,
+      hsl(84 60% 92%) 100%
+    );
+    --gradient-brand: linear-gradient(135deg, #16a34a 0%, #10b981 55%, #65a30d 100%);
+    --gradient-brand-soft: linear-gradient(135deg, #22c55e 0%, #84cc16 100%);
+    --glow-brand: 0 12px 40px -12px rgba(22, 163, 74, 0.45);
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 142 76% 36%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
+    --background: 155 30% 6%;
+    --foreground: 140 30% 96%;
+    --card: 155 26% 9%;
+    --card-foreground: 140 30% 96%;
+    --popover: 155 26% 9%;
+    --popover-foreground: 140 30% 96%;
+    --primary: 142 68% 45%;
+    --primary-foreground: 155 40% 6%;
+    --secondary: 150 20% 16%;
+    --secondary-foreground: 140 30% 96%;
+    --muted: 150 15% 15%;
+    --muted-foreground: 140 12% 65%;
+    --accent: 84 60% 50%;
+    --accent-foreground: 84 90% 10%;
+    --destructive: 0 62.8% 45%;
     --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 142 76% 36%;
+    --border: 150 15% 18%;
+    --input: 150 15% 18%;
+    --ring: 142 68% 45%;
+
+    --gradient-hero: linear-gradient(
+      135deg,
+      hsl(155 40% 8%) 0%,
+      hsl(150 35% 10%) 45%,
+      hsl(120 30% 9%) 100%
+    );
+    --gradient-brand: linear-gradient(135deg, #15803d 0%, #059669 55%, #4d7c0f 100%);
+    --gradient-brand-soft: linear-gradient(135deg, #16a34a 0%, #65a30d 100%);
+    --glow-brand: 0 12px 40px -12px rgba(34, 197, 94, 0.35);
   }
 }
 
@@ -58,10 +79,32 @@
   }
 }
 
-/* Farmer-friendly design */
+/* Farmer-friendly design system */
 @layer components {
   .farmer-button {
-    @apply rounded-full px-8 py-4 text-lg font-semibold shadow-lg transition-transform hover:scale-105;
+    @apply rounded-full px-8 py-4 text-lg font-semibold shadow-lg transition-all duration-300 hover:scale-105 active:scale-95;
+  }
+
+  /* Green gradient primary button with a hover sheen */
+  .btn-brand {
+    @apply relative overflow-hidden rounded-full px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 active:scale-95;
+    background-image: var(--gradient-brand);
+    box-shadow: var(--glow-brand);
+  }
+  .btn-brand::after {
+    content: "";
+    @apply absolute inset-0 opacity-0 transition-opacity duration-300;
+    background: linear-gradient(
+      120deg,
+      transparent 20%,
+      rgba(255, 255, 255, 0.35) 50%,
+      transparent 80%
+    );
+    transform: translateX(-100%);
+  }
+  .btn-brand:hover::after {
+    @apply opacity-100;
+    animation: sheen 0.9s ease;
   }
 
   .risk-card {
@@ -69,6 +112,65 @@
   }
 
   .feature-card {
-    @apply rounded-xl bg-card p-6 shadow-sm transition-all hover:shadow-md;
+    @apply rounded-2xl border border-border bg-card p-6 shadow-sm transition-all duration-300 hover:shadow-md;
+  }
+
+  /* Frosted-glass surface */
+  .glass-card {
+    @apply rounded-2xl border border-white/40 bg-white/70 shadow-sm backdrop-blur-md transition-all duration-300 dark:border-white/10 dark:bg-white/5;
+  }
+
+  /* Colored hover glow, driven by --glow-color set inline/by utility */
+  .glow-hover {
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  .glow-hover:hover {
+    box-shadow: 0 18px 45px -18px var(--glow-color, rgba(22, 163, 74, 0.5));
+  }
+
+  .text-gradient-brand {
+    background-image: var(--gradient-brand);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .bg-gradient-hero {
+    background-image: var(--gradient-hero);
+  }
+}
+
+@keyframes sheen {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(-18px) translateX(10px);
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 9s ease-in-out infinite;
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
   }
 }
