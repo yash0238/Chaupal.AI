@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { ArrowLeft, Loader2, CheckCircle2, AlertTriangle } from "lucide-react";
 import { supabase, isSupabaseConfigured } from "@/lib/supabase";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 type Status =
   | { kind: "idle" }
@@ -57,17 +58,20 @@ export default function SignupPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-green-50 to-white dark:from-gray-900 dark:to-gray-800">
+    <div className="min-h-screen bg-gradient-hero">
       <div className="container mx-auto px-4 py-12 max-w-md">
-        <Link
-          href="/"
-          className="inline-flex items-center text-green-600 hover:text-green-700 mb-8"
-        >
-          <ArrowLeft className="w-4 h-4 mr-2" /> Back to home
-        </Link>
+        <div className="flex items-center justify-between mb-8">
+          <Link
+            href="/"
+            className="inline-flex items-center text-green-600 hover:text-green-700 transition-colors"
+          >
+            <ArrowLeft className="w-4 h-4 mr-2" /> Back to home
+          </Link>
+          <ThemeToggle />
+        </div>
 
         <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
-          Create your account
+          Create your <span className="text-gradient-brand">account</span>
         </h1>
         <p className="text-gray-600 dark:text-gray-300 mb-8">
           Start making smarter farm decisions today.
@@ -162,7 +166,7 @@ export default function SignupPage() {
             <button
               type="submit"
               disabled={status.kind === "loading"}
-              className="w-full rounded-full bg-green-600 text-white py-3 font-semibold hover:bg-green-700 disabled:opacity-50 inline-flex items-center justify-center gap-2"
+              className="w-full rounded-full bg-gradient-brand text-white py-3 font-semibold shadow-md transition-transform hover:scale-[1.02] disabled:opacity-50 disabled:hover:scale-100 inline-flex items-center justify-center gap-2"
             >
               {status.kind === "loading" ? (
                 <>

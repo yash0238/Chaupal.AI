@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowLeft, BookOpen, Code2, Rocket } from "lucide-react";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 export const metadata = { title: "Documentation - KrisiSar AI" };
 
@@ -26,17 +27,20 @@ const docs = [
 
 export default function DocsPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-green-50 to-white dark:from-gray-900 dark:to-gray-800">
+    <div className="min-h-screen bg-gradient-hero">
       <div className="container mx-auto px-4 py-12 max-w-3xl">
-        <Link
-          href="/"
-          className="inline-flex items-center text-green-600 hover:text-green-700 mb-8"
-        >
-          <ArrowLeft className="w-4 h-4 mr-2" /> Back to home
-        </Link>
+        <div className="flex items-center justify-between mb-8">
+          <Link
+            href="/"
+            className="inline-flex items-center text-green-600 hover:text-green-700 transition-colors"
+          >
+            <ArrowLeft className="w-4 h-4 mr-2" /> Back to home
+          </Link>
+          <ThemeToggle />
+        </div>
 
         <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-          Documentation
+          <span className="text-gradient-brand">Documentation</span>
         </h1>
         <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
           Full documentation lives in the <code>/docs</code> folder of the
@@ -47,7 +51,10 @@ export default function DocsPage() {
           {docs.map((doc) => {
             const Icon = doc.icon;
             return (
-              <div key={doc.title} className="feature-card flex items-start gap-4">
+              <div
+                key={doc.title}
+                className="feature-card flex items-start gap-4 transition-all hover:-translate-y-1 hover:shadow-md"
+              >
                 <div className="w-12 h-12 rounded-xl bg-green-50 dark:bg-green-900/20 flex items-center justify-center shrink-0">
                   <Icon className="w-6 h-6 text-green-600" />
                 </div>
