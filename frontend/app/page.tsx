@@ -18,6 +18,10 @@ import {
   Layers,
   Check,
   Globe,
+  Leaf,
+  Droplets,
+  Recycle,
+  Sprout,
 } from "lucide-react";
 import { COPY, LANGS, type Locale, type Item } from "@/lib/landing-i18n";
 import { ThemeToggle } from "@/components/ThemeToggle";
@@ -30,12 +34,12 @@ import {
 } from "@/components/motion";
 
 const FEATURE_META = [
-  { icon: Camera, color: "text-green-600", bg: "bg-green-50 dark:bg-green-900/20", glow: "rgba(22,163,74,0.45)" },
-  { icon: Shield, color: "text-orange-600", bg: "bg-orange-50 dark:bg-orange-900/20", glow: "rgba(234,88,12,0.4)" },
-  { icon: CloudRain, color: "text-blue-600", bg: "bg-blue-50 dark:bg-blue-900/20", glow: "rgba(37,99,235,0.4)" },
-  { icon: MessageCircle, color: "text-purple-600", bg: "bg-purple-50 dark:bg-purple-900/20", glow: "rgba(147,51,234,0.4)" },
-  { icon: FileText, color: "text-indigo-600", bg: "bg-indigo-50 dark:bg-indigo-900/20", glow: "rgba(79,70,229,0.4)" },
-  { icon: BarChart3, color: "text-teal-600", bg: "bg-teal-50 dark:bg-teal-900/20", glow: "rgba(13,148,136,0.4)" },
+  { icon: Camera, color: "text-emerald-600", bg: "bg-emerald-50 dark:bg-emerald-900/20", glow: "rgba(5,150,105,0.45)", span: "lg:col-span-2" },
+  { icon: Shield, color: "text-amber-600", bg: "bg-amber-50 dark:bg-amber-900/20", glow: "rgba(217,119,6,0.4)", span: "" },
+  { icon: CloudRain, color: "text-sky-600", bg: "bg-sky-50 dark:bg-sky-900/20", glow: "rgba(2,132,199,0.4)", span: "" },
+  { icon: MessageCircle, color: "text-teal-600", bg: "bg-teal-50 dark:bg-teal-900/20", glow: "rgba(13,148,136,0.4)", span: "" },
+  { icon: FileText, color: "text-lime-600", bg: "bg-lime-50 dark:bg-lime-900/20", glow: "rgba(101,163,13,0.4)", span: "" },
+  { icon: BarChart3, color: "text-cyan-600", bg: "bg-cyan-50 dark:bg-cyan-900/20", glow: "rgba(8,145,178,0.4)", span: "lg:col-span-2" },
 ];
 
 const TECH_META = [Sparkles, Boxes, Cpu, Database, LineChart, Layers];
@@ -193,23 +197,34 @@ export default function HomePage() {
             {t.featuresHeading}
           </h2>
         </Reveal>
-        <StaggerGroup className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <StaggerGroup className="grid md:grid-cols-2 lg:grid-cols-3 auto-rows-fr gap-5">
           {t.features.map((f: Item, i: number) => {
             const meta = FEATURE_META[i];
             const Icon = meta.icon;
+            const wide = meta.span !== "";
             return (
-              <StaggerItem key={i}>
+              <StaggerItem key={i} className={meta.span}>
                 <div
-                  className="group glow-hover h-full rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 shadow-sm transition-all hover:-translate-y-1.5"
+                  className={`group glow-hover relative h-full overflow-hidden rounded-3xl border border-gray-200 dark:border-gray-800 p-6 shadow-sm transition-all hover:-translate-y-1.5 ${
+                    wide
+                      ? "bg-gradient-to-br from-white to-green-50/60 dark:from-gray-900 dark:to-emerald-950/20"
+                      : "bg-white dark:bg-gray-900"
+                  }`}
                   style={{ "--glow-color": meta.glow } as React.CSSProperties}
                 >
+                  {/* corner accent */}
+                  <span
+                    className={`pointer-events-none absolute -right-10 -top-10 h-28 w-28 rounded-full ${meta.bg} opacity-0 blur-2xl transition-opacity duration-300 group-hover:opacity-100`}
+                  />
                   <div
-                    className={`w-14 h-14 rounded-xl ${meta.bg} flex items-center justify-center mb-4 transition-transform group-hover:scale-110 group-hover:-rotate-6`}
+                    className={`relative w-14 h-14 rounded-2xl ${meta.bg} flex items-center justify-center mb-4 transition-transform group-hover:scale-110 group-hover:-rotate-6`}
                   >
                     <Icon className={`w-7 h-7 ${meta.color}`} />
                   </div>
-                  <h3 className="text-xl font-bold mb-2">{f.title}</h3>
-                  <p className="text-gray-600 dark:text-gray-300">{f.desc}</p>
+                  <h3 className={`relative font-bold mb-2 ${wide ? "text-2xl" : "text-xl"}`}>
+                    {f.title}
+                  </h3>
+                  <p className="relative text-gray-600 dark:text-gray-300">{f.desc}</p>
                 </div>
               </StaggerItem>
             );
@@ -277,6 +292,69 @@ export default function HomePage() {
               );
             })}
           </StaggerGroup>
+        </div>
+      </section>
+
+      {/* ── Climate impact / SDG band ── */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-green-700 via-emerald-700 to-teal-800 py-20 text-white">
+        <div className="absolute -top-20 -left-16 w-80 h-80 bg-lime-400/10 rounded-full blur-3xl animate-float-slow" />
+        <div className="absolute -bottom-24 -right-10 w-96 h-96 bg-emerald-300/10 rounded-full blur-3xl" />
+        <div className="relative container mx-auto px-4">
+          <Reveal>
+            <p className="text-center text-emerald-200 font-semibold tracking-wide uppercase text-sm mb-3">
+              Sustainability at the core
+            </p>
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+              Technology for a Climate-Resilient Future
+            </h2>
+            <p className="text-center text-emerald-50/90 max-w-2xl mx-auto mb-12">
+              Every feature is designed to cut resource waste, protect yields
+              against climate volatility, and put sustainable practices within
+              reach of every farmer.
+            </p>
+          </Reveal>
+
+          {/* Impact metrics */}
+          <StaggerGroup className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-14">
+            {[
+              { icon: Droplets, label: "Water-smart irrigation", value: "Less waste" },
+              { icon: Leaf, label: "Reduced chemical overuse", value: "Greener inputs" },
+              { icon: Recycle, label: "Resource efficiency", value: "Lower costs" },
+              { icon: Sprout, label: "Climate resilience", value: "Protected yields" },
+            ].map((m, i) => {
+              const Icon = m.icon;
+              return (
+                <StaggerItem key={i}>
+                  <div className="h-full rounded-2xl border border-white/15 bg-white/10 backdrop-blur-md p-5 text-center">
+                    <Icon className="w-8 h-8 mx-auto mb-3 text-lime-300" />
+                    <div className="font-bold text-lg">{m.value}</div>
+                    <div className="text-sm text-emerald-100/80 mt-1">{m.label}</div>
+                  </div>
+                </StaggerItem>
+              );
+            })}
+          </StaggerGroup>
+
+          {/* SDG alignment */}
+          <Reveal>
+            <div className="flex flex-wrap items-center justify-center gap-3">
+              <span className="text-emerald-100/90 font-medium mr-1">
+                Aligned with UN Sustainable Development Goals:
+              </span>
+              {[
+                "SDG 2 · Zero Hunger",
+                "SDG 13 · Climate Action",
+                "SDG 1 · No Poverty",
+              ].map((sdg) => (
+                <span
+                  key={sdg}
+                  className="rounded-full bg-white/15 border border-white/20 px-4 py-1.5 text-sm font-semibold backdrop-blur"
+                >
+                  {sdg}
+                </span>
+              ))}
+            </div>
+          </Reveal>
         </div>
       </section>
 
