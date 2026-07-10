@@ -30,12 +30,12 @@ import {
 } from "@/components/motion";
 
 const FEATURE_META = [
-  { icon: Camera, color: "text-green-600", bg: "bg-green-50 dark:bg-green-900/20" },
-  { icon: Shield, color: "text-orange-600", bg: "bg-orange-50 dark:bg-orange-900/20" },
-  { icon: CloudRain, color: "text-blue-600", bg: "bg-blue-50 dark:bg-blue-900/20" },
-  { icon: MessageCircle, color: "text-purple-600", bg: "bg-purple-50 dark:bg-purple-900/20" },
-  { icon: FileText, color: "text-indigo-600", bg: "bg-indigo-50 dark:bg-indigo-900/20" },
-  { icon: BarChart3, color: "text-teal-600", bg: "bg-teal-50 dark:bg-teal-900/20" },
+  { icon: Camera, color: "text-green-600", bg: "bg-green-50 dark:bg-green-900/20", glow: "rgba(22,163,74,0.45)" },
+  { icon: Shield, color: "text-orange-600", bg: "bg-orange-50 dark:bg-orange-900/20", glow: "rgba(234,88,12,0.4)" },
+  { icon: CloudRain, color: "text-blue-600", bg: "bg-blue-50 dark:bg-blue-900/20", glow: "rgba(37,99,235,0.4)" },
+  { icon: MessageCircle, color: "text-purple-600", bg: "bg-purple-50 dark:bg-purple-900/20", glow: "rgba(147,51,234,0.4)" },
+  { icon: FileText, color: "text-indigo-600", bg: "bg-indigo-50 dark:bg-indigo-900/20", glow: "rgba(79,70,229,0.4)" },
+  { icon: BarChart3, color: "text-teal-600", bg: "bg-teal-50 dark:bg-teal-900/20", glow: "rgba(13,148,136,0.4)" },
 ];
 
 const TECH_META = [Sparkles, Boxes, Cpu, Database, LineChart, Layers];
@@ -84,39 +84,68 @@ export default function HomePage() {
 
       {/* ── Hero ── */}
       <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-green-50 via-white to-white dark:from-green-950/30 dark:via-gray-950 dark:to-gray-950" />
-        <div className="absolute -top-24 -right-24 w-96 h-96 bg-green-400/20 rounded-full blur-3xl" />
-        <div className="absolute -bottom-32 -left-24 w-96 h-96 bg-emerald-400/10 rounded-full blur-3xl" />
+        <div className="absolute inset-0 bg-gradient-hero" />
+        <div className="absolute -top-24 -right-24 w-96 h-96 bg-green-400/25 rounded-full blur-3xl animate-float-slow" />
+        <div
+          className="absolute -bottom-32 -left-24 w-96 h-96 bg-lime-400/20 rounded-full blur-3xl animate-float-slow"
+          style={{ animationDelay: "-4s" }}
+        />
+        <div className="absolute top-1/3 left-1/2 w-72 h-72 -translate-x-1/2 bg-emerald-300/10 rounded-full blur-3xl" />
 
         <div className="relative container mx-auto px-4 pt-16 pb-20 text-center">
-          <span className="inline-flex items-center gap-2 rounded-full border border-green-200 dark:border-green-800 bg-green-50 dark:bg-green-900/30 px-4 py-1.5 text-sm font-medium text-green-700 dark:text-green-300 mb-6">
+          <motion.span
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-2 rounded-full border border-green-200 dark:border-green-800 bg-green-50 dark:bg-green-900/30 px-4 py-1.5 text-sm font-medium text-green-700 dark:text-green-300 mb-6"
+          >
             <Sparkles className="w-4 h-4" /> {t.eyebrow}
-          </span>
+          </motion.span>
 
-          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-5">
-            🌾 KrisiSar AI
-          </h1>
-          <p className="text-2xl md:text-3xl font-semibold text-green-600 dark:text-green-400 mb-4">
+          <motion.h1
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, delay: 0.05 }}
+            className="text-5xl md:text-7xl font-extrabold tracking-tight mb-5"
+          >
+            🌾 <span className="text-gradient-brand">KrisiSar AI</span>
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, delay: 0.15 }}
+            className="text-2xl md:text-3xl font-semibold text-green-600 dark:text-green-400 mb-4"
+          >
             {t.tagline}
-          </p>
-          <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-8">
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, delay: 0.25 }}
+            className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-8"
+          >
             {t.subtitle}
-          </p>
+          </motion.p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, delay: 0.35 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center mb-10"
+          >
             <Link
               href="/dashboard"
-              className="farmer-button bg-green-600 text-white hover:bg-green-700 inline-flex items-center justify-center"
+              className="btn-brand inline-flex items-center justify-center"
             >
               {t.getStarted} <ArrowRight className="ml-2 w-5 h-5" />
             </Link>
             <Link
               href="/demo"
-              className="farmer-button bg-white dark:bg-gray-900 text-green-600 border-2 border-green-600 hover:bg-green-50 dark:hover:bg-gray-800 inline-flex items-center justify-center"
+              className="farmer-button bg-white/80 backdrop-blur dark:bg-gray-900/70 text-green-600 border-2 border-green-500 hover:bg-green-50 dark:hover:bg-gray-800 inline-flex items-center justify-center"
             >
               {t.watchDemo}
             </Link>
-          </div>
+          </motion.div>
 
           {/* Clickable language pills */}
           <div className="flex flex-wrap gap-2 justify-center mb-14">
@@ -140,86 +169,92 @@ export default function HomePage() {
           </div>
 
           {/* Stats band */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+          <StaggerGroup className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
             {STAT_VALUES.map((value, i) => (
-              <div
-                key={i}
-                className="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-5 shadow-sm"
-              >
-                <div className="text-3xl font-extrabold text-green-600 dark:text-green-400">
-                  {value}
+              <StaggerItem key={i}>
+                <div className="glass-card glow-hover h-full p-5 hover:-translate-y-1">
+                  <div className="text-3xl font-extrabold text-gradient-brand">
+                    <CountUp value={value} />
+                  </div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                    {t.statLabels[i]}
+                  </div>
                 </div>
-                <div className="text-sm text-gray-600 dark:text-gray-400 mt-1">
-                  {t.statLabels[i]}
-                </div>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerGroup>
         </div>
       </section>
 
       {/* ── Features ── */}
       <section className="container mx-auto px-4 py-20">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-14">
-          {t.featuresHeading}
-        </h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <Reveal>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-14">
+            {t.featuresHeading}
+          </h2>
+        </Reveal>
+        <StaggerGroup className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {t.features.map((f: Item, i: number) => {
             const meta = FEATURE_META[i];
             const Icon = meta.icon;
             return (
-              <div
-                key={i}
-                className="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all"
-              >
+              <StaggerItem key={i}>
                 <div
-                  className={`w-14 h-14 rounded-xl ${meta.bg} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}
+                  className="group glow-hover h-full rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 shadow-sm transition-all hover:-translate-y-1.5"
+                  style={{ "--glow-color": meta.glow } as React.CSSProperties}
                 >
-                  <Icon className={`w-7 h-7 ${meta.color}`} />
+                  <div
+                    className={`w-14 h-14 rounded-xl ${meta.bg} flex items-center justify-center mb-4 transition-transform group-hover:scale-110 group-hover:-rotate-6`}
+                  >
+                    <Icon className={`w-7 h-7 ${meta.color}`} />
+                  </div>
+                  <h3 className="text-xl font-bold mb-2">{f.title}</h3>
+                  <p className="text-gray-600 dark:text-gray-300">{f.desc}</p>
                 </div>
-                <h3 className="text-xl font-bold mb-2">{f.title}</h3>
-                <p className="text-gray-600 dark:text-gray-300">{f.desc}</p>
-              </div>
+              </StaggerItem>
             );
           })}
-        </div>
+        </StaggerGroup>
       </section>
 
       {/* ── Problem ── */}
       <section className="bg-red-50/60 dark:bg-red-950/20 py-20">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-red-700 dark:text-red-400">
-            {t.problemHeading}
-          </h2>
-          <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-5">
+          <Reveal>
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-red-700 dark:text-red-400">
+              {t.problemHeading}
+            </h2>
+          </Reveal>
+          <StaggerGroup className="max-w-4xl mx-auto grid md:grid-cols-2 gap-5">
             {t.problems.map((p: Item, i: number) => (
-              <div
-                key={i}
-                className="bg-white dark:bg-gray-900 rounded-xl p-6 shadow-sm border-l-4 border-red-400"
-              >
-                <h3 className="font-bold text-lg mb-2 text-red-600 dark:text-red-400">
-                  ❌ {p.title}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-300">{p.desc}</p>
-              </div>
+              <StaggerItem key={i}>
+                <div className="h-full bg-white dark:bg-gray-900 rounded-xl p-6 shadow-sm border-l-4 border-red-400 transition-all hover:-translate-y-1 hover:shadow-md">
+                  <h3 className="font-bold text-lg mb-2 text-red-600 dark:text-red-400">
+                    ❌ {p.title}
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-300">{p.desc}</p>
+                </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerGroup>
         </div>
       </section>
 
       {/* ── Solution ── */}
-      <section className="py-20">
+      <section className="py-20 bg-gradient-to-b from-transparent via-green-50/40 to-transparent dark:via-green-950/10">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-green-700 dark:text-green-400">
-            {t.solutionHeading}
-          </h2>
-          <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-5">
+          <Reveal>
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-green-700 dark:text-green-400">
+              {t.solutionHeading}
+            </h2>
+          </Reveal>
+          <StaggerGroup className="max-w-4xl mx-auto grid md:grid-cols-2 gap-5">
             {t.solutions.map((s: Item, i: number) => {
               const isLive = SOLUTION_STATUS[i] === "Live";
               return (
+                <StaggerItem key={i}>
                 <div
-                  key={i}
-                  className="bg-green-50 dark:bg-green-900/20 rounded-xl p-6 shadow-sm border-l-4 border-green-500"
+                  className="h-full bg-green-50 dark:bg-green-900/20 rounded-xl p-6 shadow-sm border-l-4 border-green-500 transition-all hover:-translate-y-1 hover:shadow-md"
                 >
                   <div className="flex items-center gap-2 mb-2 flex-wrap">
                     <h3 className="font-bold text-lg text-green-700 dark:text-green-400">
@@ -238,58 +273,68 @@ export default function HomePage() {
                   </div>
                   <p className="text-gray-700 dark:text-gray-300">{s.desc}</p>
                 </div>
+                </StaggerItem>
               );
             })}
-          </div>
+          </StaggerGroup>
         </div>
       </section>
 
       {/* ── Technology ── */}
       <section className="bg-gray-50 dark:bg-gray-900 py-20">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-14">
-            {t.techHeading}
-          </h2>
-          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <Reveal>
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-14">
+              {t.techHeading}
+            </h2>
+          </Reveal>
+          <StaggerGroup className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {t.tech.map((tech: Item, i: number) => {
               const Icon = TECH_META[i];
               return (
+                <StaggerItem key={i}>
                 <div
-                  key={i}
-                  className="rounded-2xl bg-white dark:bg-gray-950 p-6 shadow-sm border border-gray-200 dark:border-gray-800 hover:border-green-400 transition-colors"
+                  className="group h-full rounded-2xl bg-white dark:bg-gray-950 p-6 shadow-sm border border-gray-200 dark:border-gray-800 hover:border-green-400 transition-all hover:-translate-y-1 hover:shadow-md"
                 >
-                  <div className="w-11 h-11 rounded-lg bg-green-50 dark:bg-green-900/30 flex items-center justify-center mb-4">
-                    <Icon className="w-6 h-6 text-green-600 dark:text-green-400" />
+                  <div className="w-11 h-11 rounded-lg bg-gradient-brand-soft flex items-center justify-center mb-4 transition-transform group-hover:scale-110">
+                    <Icon className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="font-bold text-lg mb-1">{tech.title}</h3>
                   <p className="text-sm text-gray-600 dark:text-gray-300">
                     {tech.desc}
                   </p>
                 </div>
+                </StaggerItem>
               );
             })}
-          </div>
+          </StaggerGroup>
         </div>
       </section>
 
       {/* ── CTA ── */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-green-600 to-emerald-700 px-6 py-16 text-center text-white shadow-xl">
-            <div className="absolute -top-16 -right-10 w-64 h-64 bg-white/10 rounded-full blur-2xl" />
-            <h2 className="relative text-3xl md:text-5xl font-bold mb-4">
-              {t.ctaHeading}
-            </h2>
-            <p className="relative text-lg text-green-50 mb-8 max-w-2xl mx-auto">
-              {t.ctaSubtitle}
-            </p>
-            <Link
-              href="/signup"
-              className="relative farmer-button bg-white text-green-700 hover:bg-green-50 inline-flex items-center"
-            >
-              {t.ctaButton} <ArrowRight className="ml-2 w-5 h-5" />
-            </Link>
-          </div>
+          <Reveal>
+            <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-green-600 via-emerald-600 to-lime-600 px-6 py-16 text-center text-white shadow-xl">
+              <div className="absolute -top-16 -right-10 w-64 h-64 bg-white/10 rounded-full blur-2xl animate-float-slow" />
+              <div
+                className="absolute -bottom-20 -left-10 w-72 h-72 bg-lime-300/10 rounded-full blur-2xl animate-float-slow"
+                style={{ animationDelay: "-3s" }}
+              />
+              <h2 className="relative text-3xl md:text-5xl font-bold mb-4">
+                {t.ctaHeading}
+              </h2>
+              <p className="relative text-lg text-green-50 mb-8 max-w-2xl mx-auto">
+                {t.ctaSubtitle}
+              </p>
+              <Link
+                href="/signup"
+                className="relative farmer-button bg-white text-green-700 hover:bg-green-50 inline-flex items-center"
+              >
+                {t.ctaButton} <ArrowRight className="ml-2 w-5 h-5" />
+              </Link>
+            </div>
+          </Reveal>
         </div>
       </section>
 

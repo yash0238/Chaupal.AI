@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import type { ReactNode } from "react";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 interface FeatureShellProps {
   title: string;
@@ -10,18 +11,21 @@ interface FeatureShellProps {
 
 export function FeatureShell({ title, description, children }: FeatureShellProps) {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-green-50 to-white dark:from-gray-900 dark:to-gray-800">
+    <div className="min-h-screen bg-gradient-hero">
       <div className="container mx-auto px-4 py-12 max-w-4xl">
-        <Link
-          href="/dashboard"
-          className="inline-flex items-center text-green-600 hover:text-green-700 mb-8"
-        >
-          <ArrowLeft className="w-4 h-4 mr-2" /> Back to dashboard
-        </Link>
+        <div className="flex items-center justify-between mb-8">
+          <Link
+            href="/dashboard"
+            className="inline-flex items-center text-green-600 hover:text-green-700 transition-colors"
+          >
+            <ArrowLeft className="w-4 h-4 mr-2" /> Back to dashboard
+          </Link>
+          <ThemeToggle />
+        </div>
 
-        <div className="mb-8">
+        <div className="mb-8 animate-slide-up">
           <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
-            {title}
+            <span className="text-gradient-brand">{title}</span>
           </h1>
           <p className="text-lg text-gray-600 dark:text-gray-300">{description}</p>
         </div>

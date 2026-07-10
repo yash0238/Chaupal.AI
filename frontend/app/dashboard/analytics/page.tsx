@@ -37,7 +37,7 @@ interface FarmInsights {
   disease_spread?: DiseaseSpread[];
 }
 
-const PIE_COLORS = ["#22c55e", "#84cc16", "#eab308", "#f97316", "#ef4444", "#6b7280"];
+const PIE_COLORS = ["#16a34a", "#22c55e", "#84cc16", "#eab308", "#f97316", "#ef4444"];
 
 export default function AnalyticsPage() {
   const [loading, setLoading] = useState(true);
@@ -127,15 +127,24 @@ export default function AnalyticsPage() {
               <div className="h-72">
                 <ResponsiveContainer width="100%" height="100%">
                   <BarChart data={yieldByCrop}>
+                    <defs>
+                      <linearGradient id="yieldFill" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stopColor="#22c55e" stopOpacity={0.95} />
+                        <stop offset="100%" stopColor="#15803d" stopOpacity={0.85} />
+                      </linearGradient>
+                    </defs>
                     <CartesianGrid strokeDasharray="3 3" opacity={0.2} />
                     <XAxis dataKey="crop_type" />
                     <YAxis />
-                    <Tooltip />
+                    <Tooltip
+                      cursor={{ fill: "rgba(34,197,94,0.08)" }}
+                      contentStyle={{ borderRadius: 12, border: "1px solid #d1fae5" }}
+                    />
                     <Bar
                       dataKey="avg_yield"
                       name="Avg yield (kg)"
-                      fill="#22c55e"
-                      radius={[4, 4, 0, 0]}
+                      fill="url(#yieldFill)"
+                      radius={[6, 6, 0, 0]}
                     />
                   </BarChart>
                 </ResponsiveContainer>
@@ -152,15 +161,24 @@ export default function AnalyticsPage() {
               <div className="h-80">
                 <ResponsiveContainer width="100%" height="100%">
                   <BarChart data={riskByState} layout="vertical">
+                    <defs>
+                      <linearGradient id="riskFill" x1="0" y1="0" x2="1" y2="0">
+                        <stop offset="0%" stopColor="#fb923c" stopOpacity={0.9} />
+                        <stop offset="100%" stopColor="#ea580c" stopOpacity={0.9} />
+                      </linearGradient>
+                    </defs>
                     <CartesianGrid strokeDasharray="3 3" opacity={0.2} />
                     <XAxis type="number" domain={[0, 100]} />
                     <YAxis type="category" dataKey="state" width={110} />
-                    <Tooltip />
+                    <Tooltip
+                      cursor={{ fill: "rgba(249,115,22,0.08)" }}
+                      contentStyle={{ borderRadius: 12, border: "1px solid #fed7aa" }}
+                    />
                     <Bar
                       dataKey="avg_risk"
                       name="Avg risk"
-                      fill="#f97316"
-                      radius={[0, 4, 4, 0]}
+                      fill="url(#riskFill)"
+                      radius={[0, 6, 6, 0]}
                     />
                   </BarChart>
                 </ResponsiveContainer>
