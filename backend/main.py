@@ -6,9 +6,14 @@ Main entry point for the AI-powered Farm Decision Intelligence Platform
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
+from fastapi.exception_handlers import http_exception_handler
+from starlette.exceptions import HTTPException as StarletteHTTPException
+import logging
 import uvicorn
 from dotenv import load_dotenv
 import os
+
+logger = logging.getLogger("croprakshak")
 
 # Load environment variables
 load_dotenv()
@@ -82,16 +87,34 @@ app.include_router(chat.router, prefix="/api/v1/chat", tags=["Chat"])
 app.include_router(analytics.router, prefix="/api/v1/analytics", tags=["Analytics"])
 app.include_router(alerts.router, prefix="/api/v1/alerts", tags=["Alerts"])
 
-# Global exception handler
+GENERIC_5XX_MESSAGE = "Something went wrong. Please try again later."
+
+
+# Sanitize 5xx HTTPExceptions raised by routes (e.g. detail=str(e)) so raw
+# error text never reaches the client. 4xx messages (validation, "invalid
+# image format", etc.) stay intact because they're safe and useful.
+@app.exception_handler(StarletteHTTPException)
+async def http_exception_sanitizer(request, exc: StarletteHTTPException):
+    if exc.status_code >= 500:
+        logger.error(
+            "%s error on %s %s: %s",
+            exc.status_code, request.method, request.url.path, exc.detail,
+        )
+        return JSONResponse(
+            status_code=exc.status_code,
+            content={"error": "Server error", "message": GENERIC_5XX_MESSAGE},
+        )
+    # Non-5xx: use FastAPI's default handler (preserves helpful detail).
+    return await http_exception_handler(request, exc)
+
+
+# Catch-all for any unhandled (non-HTTP) exception: log it, return generic.
 @app.exception_handler(Exception)
 async def global_exception_handler(request, exc):
+    logger.exception("Unhandled error on %s %s", request.method, request.url.path)
     return JSONResponse(
         status_code=500,
-        content={
-            "error": "Internal server error",
-            "message": str(exc),
-            "type": type(exc).__name__
-        }
+        content={"error": "Internal server error", "message": GENERIC_5XX_MESSAGE},
     )
 
 if __name__ == "__main__":
