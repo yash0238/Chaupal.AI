@@ -37,6 +37,16 @@ class Settings(BaseSettings):
     OPEN_METEO_API_URL: str = "https://api.open-meteo.com/v1/forecast"
     NASA_POWER_API_URL: Optional[str] = None
     AGMARKNET_API_URL: Optional[str] = None
+
+    # Sarvam AI (India-first multilingual LLM — used for the chat assistant &
+    # farmer-facing text so Indian-language answers are more natural than Gemini.
+    # If SARVAM_API_KEY is unset, the code automatically falls back to Gemini,
+    # so the app keeps working without it.)
+    SARVAM_API_KEY: Optional[str] = None
+    SARVAM_API_URL: str = "https://api.sarvam.ai/v1/chat/completions"
+    # sarvam-m was deprecated; use sarvam-30b (fast, good for chat) or
+    # sarvam-105b (higher quality, slower). Override via SARVAM_MODEL in .env.
+    SARVAM_MODEL: str = "sarvam-30b"
     
     # Gemini Configuration (GA model names — avoid -exp aliases that get retired)
     # NOTE: gemini-2.5-pro has 0 quota on the free tier, so we use flash for the
