@@ -43,16 +43,18 @@ app = FastAPI(
 origins = [
     "http://localhost:3000",
     "http://localhost:3001",
+    "https://chaupal-ai.vercel.app",
     "https://krisi-sar-ai.vercel.app",
 ]
 
-# Also allow Vercel preview deployments (e.g. krisi-sar-ai-git-*.vercel.app)
-# without having to hardcode each one.
+# Also allow any Vercel deployment (production + preview URLs like
+# chaupal-ai-git-*.vercel.app) without hardcoding each one.
 origin_regex = r"https://.*\.vercel\.app"
 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
+    allow_origin_regex=origin_regex,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
