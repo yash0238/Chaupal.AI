@@ -10,9 +10,9 @@
 
 <br/>
 
-[![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-View_App-22c55e?style=for-the-badge)]()
-[![API Docs](https://img.shields.io/badge/⚙️_API-Swagger-46E3B7?style=for-the-badge)](https://krisisar-ai.onrender.com/docs)
-[![GitHub](https://img.shields.io/badge/GitHub-Repo-181717?style=for-the-badge&logo=github)](https://github.com/yash0238/CropRakshak)
+[![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-chaupal--ai.vercel.app-22c55e?style=for-the-badge)](https://chaupal-ai.vercel.app)
+[![API Docs](https://img.shields.io/badge/⚙️_API-Swagger-46E3B7?style=for-the-badge)](https://chaupal-ai.onrender.com/docs)
+[![GitHub](https://img.shields.io/badge/GitHub-Repo-181717?style=for-the-badge&logo=github)](https://github.com/yash0238/Chaupal.AI)
 
 [![Next.js](https://img.shields.io/badge/Next.js_15-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React_19-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://react.dev/)
@@ -214,8 +214,8 @@ Chaupal.AI is a Next.js frontend talking to a FastAPI backend that orchestrates 
 
 ### 1. Clone
 ```sh
-git clone https://github.com/yash0238/CropRakshak.git
-cd CropRakshak
+git clone https://github.com/yash0238/Chaupal.AI.git
+cd Chaupal.AI
 ```
 
 ### 2. Backend (FastAPI)

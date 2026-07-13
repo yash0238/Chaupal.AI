@@ -205,10 +205,14 @@ generate_synthetic_data.py ──▶ farm_performance_500k.csv ──▶ BigQuer
 
 ## 8. Deployment
 
+**Live URLs**
+- Frontend: **https://chaupal-ai.vercel.app**
+- Backend API (Swagger): **https://chaupal-ai.onrender.com/docs**
+
 | Layer | Platform | Notes |
 |---|---|---|
-| Frontend | Vercel | `NEXT_PUBLIC_API_URL` points at the backend |
-| Backend | Render | Web service; `.env` vars + `service-account.json` as a secret file |
+| Frontend | Vercel | `NEXT_PUBLIC_API_URL` → `https://chaupal-ai.onrender.com` |
+| Backend | Render | Web service (Root Directory `backend`); `.env` vars + `service-account.json` as a secret file |
 | Analytics | Google BigQuery | Dataset + service account |
 | Auth (optional) | Supabase | Public anon key protected by RLS |
 

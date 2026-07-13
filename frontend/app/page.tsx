@@ -430,7 +430,7 @@ export default function HomePage() {
               <FileText className="w-4 h-4" /> {t.docs}
             </Link>
             <Link
-              href="https://github.com/yash0238/CropRakshak"
+              href="https://github.com/yash0238/Chaupal.AI"
               className="hover:text-green-400"
             >
               GitHub
