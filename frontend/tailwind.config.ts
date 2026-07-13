@@ -44,7 +44,7 @@ const config: Config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // Brand green scale for KrisiSar
+        // Brand green scale for Krishivaani
         brand: {
           50: "#f0fdf4",
           100: "#dcfce7",
@@ -69,7 +69,7 @@ const config: Config = {
           600: "#65a30d",
           700: "#4d7c0f",
         },
-        // Custom colors for KrisiSar
+        // Custom colors for Krishivaani
         success: {
           DEFAULT: "hsl(142 76% 36%)",
           foreground: "hsl(0 0% 100%)",
