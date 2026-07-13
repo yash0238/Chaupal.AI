@@ -1,5 +1,5 @@
 /**
- * Small typed fetch helper for talking to the KrisiSar AI backend.
+ * Small typed fetch helper for talking to the Krishivaani backend.
  * Adds a timeout so the UI never hangs if the backend restarts or is down.
  */
 
