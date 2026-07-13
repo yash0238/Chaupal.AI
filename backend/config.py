@@ -49,14 +49,18 @@ class Settings(BaseSettings):
     SARVAM_MODEL: str = "sarvam-30b"
     
     # Gemini Configuration.
-    # NOTE: gemini-2.5-flash was deprecated (June 2026) and is blocked for NEW
-    # API keys/projects, so we default to gemini-3.5-flash (current, multimodal
-    # — covers both vision diagnosis and text). If your key doesn't support this
-    # exact ID, run ListModels (see README/troubleshooting) and override these
-    # via GEMINI_MODEL_FLASH / _PRO / _VISION env vars — no code change needed.
-    GEMINI_MODEL_FLASH: str = "gemini-3.5-flash"
-    GEMINI_MODEL_PRO: str = "gemini-3.5-flash"
-    GEMINI_MODEL_VISION: str = "gemini-3.5-flash"
+    # We default to the `gemini-flash-lite-latest` ALIAS because:
+    #  - flash-lite has a much larger FREE-tier daily quota than premium flash
+    #    (gemini-3.5-flash free tier is only ~20 requests/day),
+    #  - the `-latest` alias auto-tracks the newest flash-lite, so it won't hit
+    #    the "deprecated / not available to new users" wall (as gemini-2.5-flash
+    #    and gemini-2.5-flash-lite do for new keys),
+    #  - it's multimodal, so it also handles the image (vision) diagnosis.
+    # Override via GEMINI_MODEL_FLASH / _PRO / _VISION env vars if needed — no
+    # code change required.
+    GEMINI_MODEL_FLASH: str = "gemini-flash-lite-latest"
+    GEMINI_MODEL_PRO: str = "gemini-flash-lite-latest"
+    GEMINI_MODEL_VISION: str = "gemini-flash-lite-latest"
     GEMINI_TEMPERATURE: float = 0.7
     GEMINI_MAX_TOKENS: int = 8192
     
