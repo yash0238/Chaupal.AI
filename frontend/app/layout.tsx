@@ -7,8 +7,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
-    default: "KrisiSar AI — Farm Decision Intelligence",
-    template: "%s · KrisiSar AI",
+    default: "Krishivaani — Farm Decision Intelligence",
+    template: "%s · Krishivaani",
   },
   description:
     "AI-powered farm decision intelligence for climate-resilient agriculture: crop disease diagnosis, farm risk scoring, weather intelligence, and a multilingual assistant for farmers.",
@@ -22,18 +22,18 @@ export const metadata: Metadata = {
     "smart farming",
     "multilingual farming assistant",
   ],
-  authors: [{ name: "KrisiSar AI" }],
+  authors: [{ name: "Krishivaani" }],
   manifest: "/manifest.json",
   openGraph: {
-    title: "KrisiSar AI — Farm Decision Intelligence",
+    title: "Krishivaani — Farm Decision Intelligence",
     description:
       "Snap a crop photo, share your location, ask a question — get instant, explainable, multilingual farming decisions powered by AI.",
     type: "website",
-    siteName: "KrisiSar AI",
+    siteName: "Krishivaani",
   },
   twitter: {
     card: "summary_large_image",
-    title: "KrisiSar AI — Farm Decision Intelligence",
+    title: "Krishivaani — Farm Decision Intelligence",
     description:
       "AI-powered, climate-resilient farm decisions: diagnosis, risk, weather, and a multilingual assistant.",
   },

@@ -10,6 +10,7 @@ import {
   MessageCircle,
   FileText,
   BarChart3,
+  Mic,
   Sparkles,
   Cpu,
   Database,
@@ -40,6 +41,7 @@ const FEATURE_META = [
   { icon: MessageCircle, color: "text-teal-600", bg: "bg-teal-50 dark:bg-teal-900/20", glow: "rgba(13,148,136,0.4)", span: "" },
   { icon: FileText, color: "text-lime-600", bg: "bg-lime-50 dark:bg-lime-900/20", glow: "rgba(101,163,13,0.4)", span: "" },
   { icon: BarChart3, color: "text-cyan-600", bg: "bg-cyan-50 dark:bg-cyan-900/20", glow: "rgba(8,145,178,0.4)", span: "lg:col-span-2" },
+  { icon: Mic, color: "text-rose-600", bg: "bg-rose-50 dark:bg-rose-900/20", glow: "rgba(225,29,72,0.4)", span: "" },
 ];
 
 const TECH_META = [Sparkles, Boxes, Cpu, Database, LineChart, Layers];
@@ -70,7 +72,7 @@ export default function HomePage() {
       <header className="sticky top-0 z-50 backdrop-blur-md bg-white/80 dark:bg-gray-950/80 border-b border-gray-200/70 dark:border-gray-800">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           <span className="font-bold text-lg flex items-center gap-2">
-            <span className="text-2xl">🌾</span> KrisiSar AI
+            <span className="text-2xl">🌾</span> Krishivaani
           </span>
 
           <div className="flex items-center gap-3">
@@ -112,7 +114,7 @@ export default function HomePage() {
             transition={{ duration: 0.55, delay: 0.05 }}
             className="text-5xl md:text-7xl font-extrabold tracking-tight mb-5"
           >
-            🌾 <span className="text-gradient-brand">KrisiSar AI</span>
+            🌾 <span className="text-gradient-brand">Krishivaani</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 16 }}
@@ -428,7 +430,7 @@ export default function HomePage() {
               <FileText className="w-4 h-4" /> {t.docs}
             </Link>
             <Link
-              href="https://github.com/Ritik-Gupta8/KrisiSar-AI"
+              href="https://github.com/yash0238/CropRakshak"
               className="hover:text-green-400"
             >
               GitHub
