@@ -285,7 +285,7 @@ export default function VoicePage() {
             <div className="feature-card">
               <div className="mb-1 flex items-center justify-between">
                 <p className="text-xs font-semibold uppercase tracking-wide text-gray-400">
-                  Krishivaani says
+                  Chaupal.AI says
                 </p>
                 <button
                   onClick={() => speak(answer)}

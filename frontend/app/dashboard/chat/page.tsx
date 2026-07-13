@@ -220,7 +220,7 @@ export default function ChatPage() {
 
   return (
     <FeatureShell
-      title="Ask Krishivaani"
+      title="Ask Chaupal.AI"
       description="Multilingual AI assistant — type or speak your farming question."
     >
       <div className="mb-4 flex items-center gap-2">

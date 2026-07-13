@@ -1,4 +1,4 @@
-// Prisma Schema for Krishivaani
+// Prisma Schema for Chaupal.AI
 // Database: PostgreSQL (Supabase)
 
 generator client {

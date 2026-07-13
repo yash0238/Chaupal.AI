@@ -1,5 +1,5 @@
 # ============================================================
-# Krishivaani - OPTIONAL RAG dependencies
+# Chaupal.AI - OPTIONAL RAG dependencies
 # Only needed for the vector-search version of the
 # Government Scheme Agent. These are heavy (sentence-transformers
 # pulls in PyTorch, ~2.5GB) so they are kept out of the core install.

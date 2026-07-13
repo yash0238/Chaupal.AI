@@ -2,11 +2,11 @@
 
 <div align="center">
 
-<h1>🌾 Krishivaani</h1>
+<h1>🌾 Chaupal.AI (चौपाल.AI)</h1>
 
-### The Voice of the Farm — Speak, Snap, Decide.
+### The Village Square, Reimagined with AI — Speak, Snap, Decide.
 
-*Krishi (कृषि, agriculture) + Vaani (वाणी, voice). Diagnose disease from a photo, ask any farming question by voice in your own language, and get a clear decision — not just data. Built for climate-resilient farming.*
+*A **chaupal** (चौपाल) is the traditional village gathering where farmers meet to discuss problems and make decisions. Chaupal.AI brings that decision-making space online: snap a leaf photo, ask any farming question by voice in your own language, and get a clear decision — not just data. Built for climate-resilient farming.*
 
 <br/>
 
@@ -64,7 +64,7 @@ The result: poor timing, wasted water and chemicals, undiagnosed disease, and lo
 
 ## Our Solution
 
-**Krishivaani turns fragmented information into confident decisions — and it works by voice.** It unifies diagnosis, weather, risk, schemes, and a multilingual AI assistant into one platform that returns *decisions, not just data*. A farmer can simply speak a question in their language and hear the answer read back.
+**Chaupal.AI turns fragmented information into confident decisions — and it works by voice.** It unifies diagnosis, weather, risk, schemes, and a multilingual AI assistant into one platform that returns *decisions, not just data*. A farmer can simply speak a question in their language and hear the answer read back.
 
 - 📸 Snap a leaf photo → instant disease diagnosis + targeted treatment (less pesticide waste).
 - 🎙️ Speak a question → hear a spoken answer in your language (built for low-literacy, hands-free field use).
@@ -91,7 +91,7 @@ The result: poor timing, wasted water and chemicals, undiagnosed disease, and lo
 
 ## Voice Assistant — Our Standout Feature
 
-Most agri-apps stop at English text boxes. Krishivaani closes the loop with a **full voice pipeline** in five Indian languages, powered end-to-end by Sarvam AI:
+Most agri-apps stop at English text boxes. Chaupal.AI closes the loop with a **full voice pipeline** in five Indian languages, powered end-to-end by Sarvam AI:
 
 ```
 🎙️ Speak  →  Sarvam Saarika (STT)  →  Sarvam sarvam-30b  →  Sarvam Bulbul (TTS)  →  🔊 Hear
@@ -102,7 +102,7 @@ Most agri-apps stop at English text boxes. Krishivaani closes the loop with a **
 - **Hands-free & inclusive** — designed for low-literacy farmers and real field conditions. A **Stop** button interrupts playback anytime.
 - **Robust by design** — the browser records WebM, which we re-encode to WAV for reliable transcription; Bulbul's multi-chunk audio is merged server-side into a single playable file; and if Sarvam is unavailable, chat automatically falls back to Gemini.
 
-> This is why we chose the **Sarvam AI track**: voice + Indian languages are exactly where Sarvam shines, and exactly what the last-mile farmer needs. The name says it all — *Krishivaani*, the **voice** of agriculture.
+> This is why we chose the **Sarvam AI track**: voice + Indian languages are exactly where Sarvam shines, and exactly what the last-mile farmer needs. Just like a real *chaupal*, every farmer gets heard — in their own language, out loud.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -147,11 +147,11 @@ Most agri-apps stop at English text boxes. Krishivaani closes the loop with a **
 
 ## HACKHAZARDS Alignment
 
-**Theme — 🌍 Climate & Sustainability Systems.** Krishivaani is agri-tech for climate resilience: it reduces water and pesticide waste through targeted, timely advice, and helps farmers act before climate shocks cause losses.
+**Theme — 🌍 Climate & Sustainability Systems.** Chaupal.AI is agri-tech for climate resilience: it reduces water and pesticide waste through targeted, timely advice, and helps farmers act before climate shocks cause losses.
 
 **Track — Sarvam AI.** We use Sarvam across the full language stack — chat (`sarvam-30b`), speech-to-text (Saarika), and text-to-speech (Bulbul) — to make the platform usable by voice, in five Indian languages.
 
-| Judging lens | How Krishivaani delivers |
+| Judging lens | How Chaupal.AI delivers |
 |---|---|
 | Real user & problem | Farmers deciding irrigation / pesticide / disease action, in their own language |
 | Meaningful use of the track tech | Sarvam powers chat **and** the full voice loop (STT + TTS) in 5 languages |
@@ -175,7 +175,7 @@ Most agri-apps stop at English text boxes. Krishivaani closes the loop with a **
 
 ## Architecture
 
-Krishivaani is a Next.js frontend talking to a FastAPI backend that orchestrates 6 AI agents across Sarvam AI, Google Gemini, and BigQuery.
+Chaupal.AI is a Next.js frontend talking to a FastAPI backend that orchestrates 6 AI agents across Sarvam AI, Google Gemini, and BigQuery.
 
 ```
 ┌──────────────────────────────┐        ┌───────────────────────────────┐
@@ -269,7 +269,7 @@ SECRET_KEY=change-me-to-a-random-string
 ## Project Structure
 
 ```
-Krishivaani/
+Chaupal.AI/
 ├── frontend/                 # Next.js 15 app
 │   ├── app/
 │   │   ├── page.tsx          # Multilingual landing page

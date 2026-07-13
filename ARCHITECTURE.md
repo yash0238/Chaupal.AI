@@ -1,6 +1,6 @@
-# 🏗️ Krishivaani — Architecture
+# 🏗️ Chaupal.AI — Architecture
 
-This document describes how Krishivaani is built: the system topology, the
+This document describes how Chaupal.AI is built: the system topology, the
 multi-agent backend, the AI providers, the data layer, and the request flows
 for the headline features (voice, diagnosis, analytics).
 
@@ -10,7 +10,7 @@ for the headline features (voice, diagnosis, analytics).
 
 ## 1. System Overview
 
-Krishivaani is a two-tier application:
+Chaupal.AI is a two-tier application:
 
 - **Frontend** — a Next.js 15 (App Router) app deployed on Vercel. It renders
   the multilingual landing page and the dashboard (7 feature tools), and talks
@@ -56,7 +56,7 @@ frontend/
 │   │   ├── diagnosis/           # Crop photo → disease
 │   │   ├── risk-score/          # 0–100 farm risk
 │   │   ├── weather/             # 7-day forecast + advice
-│   │   ├── chat/                # Ask Krishivaani (text + voice replies)
+│   │   ├── chat/                # Ask Chaupal.AI (text + voice replies)
 │   │   ├── voice/               # Voice Assistant (speak → hear)
 │   │   ├── schemes/             # Government schemes
 │   │   └── analytics/           # BigQuery-backed charts
@@ -119,7 +119,7 @@ or query and returns a typed result:
 
 ## 5. AI Providers
 
-Krishivaani uses a **best-tool-per-job** strategy with automatic fallback.
+Chaupal.AI uses a **best-tool-per-job** strategy with automatic fallback.
 
 ### Sarvam AI (India-first — primary for language & voice)
 - **Chat** — `POST https://api.sarvam.ai/v1/chat/completions`, model

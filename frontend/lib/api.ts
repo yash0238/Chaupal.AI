@@ -1,5 +1,5 @@
 /**
- * Small typed fetch helper for talking to the Krishivaani backend.
+ * Small typed fetch helper for talking to the Chaupal.AI backend.
  * Adds a timeout so the UI never hangs if the backend restarts or is down.
  */
 

@@ -35,7 +35,7 @@ class ChatRequest(BaseModel):
 
 def _build_system_prompt(request: "ChatRequest") -> str:
     """Shared system prompt used by both Sarvam and Gemini."""
-    return f"""You are Krishivaani, a helpful agricultural assistant for farmers.
+    return f"""You are Chaupal.AI, a helpful agricultural assistant for farmers.
 
 Respond in {language_name(request.language)}.
 
@@ -62,7 +62,7 @@ async def _gemini_reply(system_prompt: str, user_message: str) -> str:
 
 @router.post("/message")
 async def send_chat_message(request: ChatRequest):
-    """Send chat message to Krishivaani Assistant."""
+    """Send chat message to Chaupal.AI Assistant."""
 
     system_prompt = _build_system_prompt(request)
     engine = "gemini"

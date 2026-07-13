@@ -63,7 +63,7 @@ const tiles: Tile[] = [
     bg: "bg-purple-50 dark:bg-purple-900/20",
     bar: "from-purple-500 to-fuchsia-500",
     glow: "rgba(147,51,234,0.4)",
-    title: "Ask Krishivaani",
+    title: "Ask Chaupal.AI",
     description: "Multilingual AI assistant for any farming question.",
   },
   {

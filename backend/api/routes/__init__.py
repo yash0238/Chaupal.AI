@@ -1,5 +1,5 @@
 """
-API Routes for Krishivaani Backend
+API Routes for Chaupal.AI Backend
 """
 
 from . import diagnosis

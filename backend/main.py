@@ -1,5 +1,5 @@
 """
-Krishivaani - FastAPI Backend
+Chaupal.AI - FastAPI Backend
 Main entry point for the AI-powered Farm Decision Intelligence Platform
 """
 
@@ -32,7 +32,7 @@ from api.routes import (
 
 # Initialize FastAPI app
 app = FastAPI(
-    title="Krishivaani API",
+    title="Chaupal.AI API",
     description="AI-Powered Farm Decision Intelligence Platform",
     version="1.0.0",
     docs_url="/docs",
@@ -62,7 +62,7 @@ app.add_middleware(
 @app.get("/")
 async def root():
     return {
-        "message": "Krishivaani API",
+        "message": "Chaupal.AI API",
         "version": "1.0.0",
         "status": "operational",
         "docs": "/docs"

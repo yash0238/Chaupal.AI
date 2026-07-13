@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
-export const metadata = { title: "Demo - Krishivaani" };
+export const metadata = { title: "Demo - Chaupal.AI" };
 
 export default function DemoPage() {
   return (
@@ -18,7 +18,7 @@ export default function DemoPage() {
           <span className="text-gradient-brand">Live Demo</span>
         </h1>
         <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
-          Explore Krishivaani&apos;s decision intelligence tools. The chat
+          Explore Chaupal.AI&apos;s decision intelligence tools. The chat
           assistant is fully wired to the backend — the rest are ready to
           connect.
         </p>

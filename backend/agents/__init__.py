@@ -1,5 +1,5 @@
 """
-Multi-Agent System for Krishivaani
+Multi-Agent System for Chaupal.AI
 Built using Google ADK
 """
 

@@ -1,5 +1,5 @@
 """
-Configuration management for Krishivaani Backend
+Configuration management for Chaupal.AI Backend
 """
 
 from pydantic_settings import BaseSettings
@@ -10,7 +10,7 @@ class Settings(BaseSettings):
     """Application settings"""
     
     # Application
-    APP_NAME: str = "Krishivaani"
+    APP_NAME: str = "Chaupal.AI"
     APP_VERSION: str = "1.0.0"
     DEBUG: bool = False
     

@@ -72,7 +72,7 @@ export default function HomePage() {
       <header className="sticky top-0 z-50 backdrop-blur-md bg-white/80 dark:bg-gray-950/80 border-b border-gray-200/70 dark:border-gray-800">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           <span className="font-bold text-lg flex items-center gap-2">
-            <span className="text-2xl">🌾</span> Krishivaani
+            <span className="text-2xl">🌾</span> Chaupal.AI
           </span>
 
           <div className="flex items-center gap-3">
@@ -114,7 +114,7 @@ export default function HomePage() {
             transition={{ duration: 0.55, delay: 0.05 }}
             className="text-5xl md:text-7xl font-extrabold tracking-tight mb-5"
           >
-            🌾 <span className="text-gradient-brand">Krishivaani</span>
+            🌾 <span className="text-gradient-brand">Chaupal.AI</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 16 }}
