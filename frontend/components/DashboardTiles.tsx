@@ -19,6 +19,7 @@ interface Tile {
   icon: LucideIcon;
   color: string;
   bg: string;
+  cardBg: string;
   bar: string;
   glow: string;
   title: string;
@@ -30,7 +31,8 @@ const tiles: Tile[] = [
     href: "/dashboard/diagnosis",
     icon: Camera,
     color: "text-green-600",
-    bg: "bg-green-50 dark:bg-green-900/20",
+    bg: "bg-green-100 dark:bg-green-900/30",
+    cardBg: "bg-gradient-to-br from-green-50 to-white dark:from-green-950/40 dark:to-gray-900",
     bar: "from-green-500 to-emerald-500",
     glow: "rgba(22,163,74,0.4)",
     title: "Crop Diagnosis",
@@ -40,7 +42,8 @@ const tiles: Tile[] = [
     href: "/dashboard/risk-score",
     icon: Shield,
     color: "text-orange-600",
-    bg: "bg-orange-50 dark:bg-orange-900/20",
+    bg: "bg-orange-100 dark:bg-orange-900/30",
+    cardBg: "bg-gradient-to-br from-orange-50 to-white dark:from-orange-950/40 dark:to-gray-900",
     bar: "from-orange-500 to-amber-500",
     glow: "rgba(234,88,12,0.4)",
     title: "Farm Risk Score",
@@ -50,7 +53,8 @@ const tiles: Tile[] = [
     href: "/dashboard/weather",
     icon: CloudRain,
     color: "text-blue-600",
-    bg: "bg-blue-50 dark:bg-blue-900/20",
+    bg: "bg-blue-100 dark:bg-blue-900/30",
+    cardBg: "bg-gradient-to-br from-blue-50 to-white dark:from-blue-950/40 dark:to-gray-900",
     bar: "from-sky-500 to-blue-500",
     glow: "rgba(37,99,235,0.4)",
     title: "Weather Intelligence",
@@ -60,7 +64,8 @@ const tiles: Tile[] = [
     href: "/dashboard/chat",
     icon: MessageCircle,
     color: "text-purple-600",
-    bg: "bg-purple-50 dark:bg-purple-900/20",
+    bg: "bg-purple-100 dark:bg-purple-900/30",
+    cardBg: "bg-gradient-to-br from-purple-50 to-white dark:from-purple-950/40 dark:to-gray-900",
     bar: "from-purple-500 to-fuchsia-500",
     glow: "rgba(147,51,234,0.4)",
     title: "Ask Chaupal.AI",
@@ -70,7 +75,8 @@ const tiles: Tile[] = [
     href: "/dashboard/voice",
     icon: Mic,
     color: "text-rose-600",
-    bg: "bg-rose-50 dark:bg-rose-900/20",
+    bg: "bg-rose-100 dark:bg-rose-900/30",
+    cardBg: "bg-gradient-to-br from-rose-50 to-white dark:from-rose-950/40 dark:to-gray-900",
     bar: "from-rose-500 to-pink-500",
     glow: "rgba(225,29,72,0.4)",
     title: "Voice Assistant",
@@ -80,7 +86,8 @@ const tiles: Tile[] = [
     href: "/dashboard/schemes",
     icon: FileText,
     color: "text-indigo-600",
-    bg: "bg-indigo-50 dark:bg-indigo-900/20",
+    bg: "bg-indigo-100 dark:bg-indigo-900/30",
+    cardBg: "bg-gradient-to-br from-indigo-50 to-white dark:from-indigo-950/40 dark:to-gray-900",
     bar: "from-indigo-500 to-violet-500",
     glow: "rgba(79,70,229,0.4)",
     title: "Government Schemes",
@@ -90,7 +97,8 @@ const tiles: Tile[] = [
     href: "/dashboard/analytics",
     icon: BarChart3,
     color: "text-teal-600",
-    bg: "bg-teal-50 dark:bg-teal-900/20",
+    bg: "bg-teal-100 dark:bg-teal-900/30",
+    cardBg: "bg-gradient-to-br from-teal-50 to-white dark:from-teal-950/40 dark:to-gray-900",
     bar: "from-teal-500 to-emerald-500",
     glow: "rgba(13,148,136,0.4)",
     title: "Analytics",
@@ -108,7 +116,7 @@ export function DashboardTiles() {
             <Link
               href={tile.href}
               style={{ "--glow-color": tile.glow } as React.CSSProperties}
-              className="group glow-hover relative block h-full overflow-hidden rounded-2xl border border-border bg-card p-6 shadow-sm transition-all duration-300 hover:-translate-y-1.5"
+              className={`group glow-hover relative block h-full overflow-hidden rounded-2xl border border-border ${tile.cardBg} p-6 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg`}
             >
               {/* top accent bar */}
               <span

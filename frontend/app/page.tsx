@@ -35,18 +35,19 @@ import {
 } from "@/components/motion";
 
 const FEATURE_META = [
-  { icon: Camera, color: "text-emerald-600", bg: "bg-emerald-50 dark:bg-emerald-900/20", glow: "rgba(5,150,105,0.45)", span: "lg:col-span-2" },
-  { icon: Shield, color: "text-amber-600", bg: "bg-amber-50 dark:bg-amber-900/20", glow: "rgba(217,119,6,0.4)", span: "" },
-  { icon: CloudRain, color: "text-sky-600", bg: "bg-sky-50 dark:bg-sky-900/20", glow: "rgba(2,132,199,0.4)", span: "" },
-  { icon: MessageCircle, color: "text-teal-600", bg: "bg-teal-50 dark:bg-teal-900/20", glow: "rgba(13,148,136,0.4)", span: "" },
-  { icon: FileText, color: "text-lime-600", bg: "bg-lime-50 dark:bg-lime-900/20", glow: "rgba(101,163,13,0.4)", span: "" },
-  { icon: BarChart3, color: "text-cyan-600", bg: "bg-cyan-50 dark:bg-cyan-900/20", glow: "rgba(8,145,178,0.4)", span: "lg:col-span-2" },
-  { icon: Mic, color: "text-rose-600", bg: "bg-rose-50 dark:bg-rose-900/20", glow: "rgba(225,29,72,0.4)", span: "" },
+  { icon: Camera, color: "text-emerald-600", bg: "bg-emerald-100 dark:bg-emerald-900/30", cardBg: "bg-gradient-to-br from-emerald-50 to-white dark:from-emerald-950/40 dark:to-gray-900", glow: "rgba(5,150,105,0.45)", span: "lg:col-span-2" },
+  { icon: Shield, color: "text-amber-600", bg: "bg-amber-100 dark:bg-amber-900/30", cardBg: "bg-gradient-to-br from-amber-50 to-white dark:from-amber-950/40 dark:to-gray-900", glow: "rgba(217,119,6,0.4)", span: "" },
+  { icon: CloudRain, color: "text-sky-600", bg: "bg-sky-100 dark:bg-sky-900/30", cardBg: "bg-gradient-to-br from-sky-50 to-white dark:from-sky-950/40 dark:to-gray-900", glow: "rgba(2,132,199,0.4)", span: "" },
+  { icon: MessageCircle, color: "text-teal-600", bg: "bg-teal-100 dark:bg-teal-900/30", cardBg: "bg-gradient-to-br from-teal-50 to-white dark:from-teal-950/40 dark:to-gray-900", glow: "rgba(13,148,136,0.4)", span: "" },
+  { icon: FileText, color: "text-lime-600", bg: "bg-lime-100 dark:bg-lime-900/30", cardBg: "bg-gradient-to-br from-lime-50 to-white dark:from-lime-950/40 dark:to-gray-900", glow: "rgba(101,163,13,0.4)", span: "" },
+  { icon: BarChart3, color: "text-cyan-600", bg: "bg-cyan-100 dark:bg-cyan-900/30", cardBg: "bg-gradient-to-br from-cyan-50 to-white dark:from-cyan-950/40 dark:to-gray-900", glow: "rgba(8,145,178,0.4)", span: "lg:col-span-2" },
+  { icon: Mic, color: "text-rose-600", bg: "bg-rose-100 dark:bg-rose-900/30", cardBg: "bg-gradient-to-br from-rose-50 to-white dark:from-rose-950/40 dark:to-gray-900", glow: "rgba(225,29,72,0.4)", span: "" },
 ];
 
 const TECH_META = [Sparkles, Boxes, Cpu, Database, LineChart, Layers];
 
-const STAT_VALUES = ["500K", "22.58×", "3", "5"];
+const STAT_VALUES = ["5", "7", "500K", "22.58×"];
+const STAT_EMOJI = ["🎙️", "🌾", "📊", "⚡"];
 
 const SOLUTION_STATUS: ("Live" | "Roadmap")[] = ["Live", "Live", "Live", "Roadmap"];
 
@@ -179,6 +180,9 @@ export default function HomePage() {
             {STAT_VALUES.map((value, i) => (
               <StaggerItem key={i}>
                 <div className="glass-card glow-hover h-full p-5 hover:-translate-y-1">
+                  <div className="text-2xl mb-1" aria-hidden="true">
+                    {STAT_EMOJI[i]}
+                  </div>
                   <div className="text-3xl font-extrabold text-gradient-brand">
                     <CountUp value={value} />
                   </div>
@@ -207,11 +211,7 @@ export default function HomePage() {
             return (
               <StaggerItem key={i} className={meta.span}>
                 <div
-                  className={`group glow-hover relative h-full overflow-hidden rounded-3xl border border-gray-200 dark:border-gray-800 p-6 shadow-sm transition-all hover:-translate-y-1.5 ${
-                    wide
-                      ? "bg-gradient-to-br from-white to-green-50/60 dark:from-gray-900 dark:to-emerald-950/20"
-                      : "bg-white dark:bg-gray-900"
-                  }`}
+                  className={`group glow-hover relative h-full overflow-hidden rounded-3xl border border-gray-200 dark:border-gray-800 p-6 shadow-sm transition-all hover:-translate-y-1.5 hover:shadow-lg ${meta.cardBg}`}
                   style={{ "--glow-color": meta.glow } as React.CSSProperties}
                 >
                   {/* corner accent */}

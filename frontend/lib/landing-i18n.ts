@@ -52,7 +52,7 @@ export const COPY: Record<Locale, Copy> = {
       "AI for sustainable agriculture. Diagnose crop disease, cut water and input waste, and build climate resilience — one platform, every decision.",
     getStarted: "Launch Platform",
     watchDemo: "Watch Demo",
-    statLabels: ["Farm records analyzed", "Faster insights (GPU)", "UN SDGs advanced", "Languages supported"],
+    statLabels: ["Indian languages", "AI farming tools", "Farm records", "Faster analytics"],
     featuresHeading: "Climate-Smart Tools, One Platform",
     features: [
       { title: "AI Crop Diagnosis", desc: "Snap a leaf photo for instant disease detection — and cut pesticide overuse with precise, targeted treatment. Powered by Gemini Vision." },
@@ -103,7 +103,7 @@ export const COPY: Record<Locale, Copy> = {
       "टिकाऊ खेती के लिए AI। फसल रोग पहचानें, पानी और इनपुट की बर्बादी घटाएँ, और जलवायु सहनशीलता बनाएँ — एक मंच, हर निर्णय।",
     getStarted: "प्लेटफ़ॉर्म खोलें",
     watchDemo: "डेमो देखें",
-    statLabels: ["विश्लेषित कृषि रिकॉर्ड", "तेज़ अंतर्दृष्टि (GPU)", "समर्थित UN SDG", "समर्थित भाषाएँ"],
+    statLabels: ["भारतीय भाषाएँ", "AI कृषि उपकरण", "फार्म रिकॉर्ड", "तेज़ एनालिटिक्स"],
     featuresHeading: "एक ही मंच पर वह सब जो आपको चाहिए",
     features: [
       { title: "फसल निदान", desc: "फसल की तस्वीर अपलोड करें। Gemini Vision से तुरंत रोग पहचान और उपचार पाएं।" },
@@ -154,7 +154,7 @@ export const COPY: Record<Locale, Copy> = {
       "शाश्वत शेतीसाठी AI. पीक रोग ओळखा, पाणी व निविष्ठांची नासाडी कमी करा, आणि हवामान सहनशीलता निर्माण करा — एकच व्यासपीठ, प्रत्येक निर्णय.",
     getStarted: "प्लॅटफॉर्म उघडा",
     watchDemo: "डेमो पहा",
-    statLabels: ["विश्लेषित शेती नोंदी", "जलद अंतर्दृष्टी (GPU)", "समर्थित UN SDG", "समर्थित भाषा"],
+    statLabels: ["भारतीय भाषा", "AI शेती साधने", "फार्म नोंदी", "जलद अॅनालिटिक्स"],
     featuresHeading: "एकाच व्यासपीठावर आवश्यक ते सर्व",
     features: [
       { title: "पीक निदान", desc: "पिकाचा फोटो अपलोड करा. Gemini Vision कडून त्वरित रोग ओळख आणि उपचार मिळवा." },
@@ -205,7 +205,7 @@ export const COPY: Record<Locale, Copy> = {
       "நிலையான வேளாண்மைக்கான AI. பயிர் நோயைக் கண்டறியுங்கள், நீர் மற்றும் இடுபொருள் விரயத்தைக் குறையுங்கள், காலநிலை தாங்குதிறனை உருவாக்குங்கள் — ஒரே தளம், ஒவ்வொரு முடிவும்.",
     getStarted: "தளத்தைத் தொடங்கு",
     watchDemo: "டெமோவைப் பார்க்கவும்",
-    statLabels: ["பகுப்பாய்வு பதிவுகள்", "வேகமான நுண்ணறிவு (GPU)", "முன்னேற்றிய UN SDGs", "ஆதரிக்கப்படும் மொழிகள்"],
+    statLabels: ["இந்திய மொழிகள்", "AI பண்ணை கருவிகள்", "பண்ணை பதிவுகள்", "வேகமான பகுப்பாய்வு"],
     featuresHeading: "ஒரே தளத்தில் உங்களுக்குத் தேவையான அனைத்தும்",
     features: [
       { title: "பயிர் நோய் கண்டறிதல்", desc: "பயிர் புகைப்படத்தைப் பதிவேற்றவும். Gemini Vision மூலம் உடனடி நோய் கண்டறிதல் மற்றும் சிகிச்சை பெறவும்." },
@@ -256,7 +256,7 @@ export const COPY: Record<Locale, Copy> = {
       "సుస్థిర వ్యవసాయం కోసం AI. పంట వ్యాధిని గుర్తించండి, నీరు మరియు ఇన్‌పుట్ వృథాను తగ్గించండి, వాతావరణ నిరోధకతను పెంచండి — ఒకే వేదిక, ప్రతి నిర్ణయం.",
     getStarted: "ప్లాట్‌ఫారమ్ తెరవండి",
     watchDemo: "డెమో చూడండి",
-    statLabels: ["విశ్లేషించిన రికార్డులు", "వేగవంతమైన అంతర్దృష్టులు (GPU)", "ముందుకు తీసిన UN SDGs", "మద్దతు ఉన్న భాషలు"],
+    statLabels: ["భారతీయ భాషలు", "AI వ్యవసాయ సాధనాలు", "ఫార్మ్ రికార్డులు", "వేగవంతమైన విశ్లేషణ"],
     featuresHeading: "ఒకే వేదికపై మీకు కావలసినదంతా",
     features: [
       { title: "పంట నిర్ధారణ", desc: "పంట ఫోటోను అప్‌లోడ్ చేయండి. Gemini Vision ద్వారా తక్షణ వ్యాధి గుర్తింపు మరియు చికిత్స పొందండి." },
