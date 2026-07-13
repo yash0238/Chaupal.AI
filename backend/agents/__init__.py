@@ -1,5 +1,5 @@
 """
-Multi-Agent System for KrisiSar AI
+Multi-Agent System for Krishivaani
 Built using Google ADK
 """
 

@@ -1,5 +1,5 @@
 """
-API Routes for KrisiSar AI Backend
+API Routes for Krishivaani Backend
 """
 
 from . import diagnosis
