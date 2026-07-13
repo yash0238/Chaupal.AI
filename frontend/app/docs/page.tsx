@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowLeft, BookOpen, Code2, Rocket } from "lucide-react";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
-export const metadata = { title: "Documentation - KrisiSar AI" };
+export const metadata = { title: "Documentation - Krishivaani" };
 
 const docs = [
   {
